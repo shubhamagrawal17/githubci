@@ -1,1 +1,63 @@
-<h1>Home Page 🚀</h1><a href='/about'>About</a>
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>CI/CD Demo</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <nav>
+    <h2>CI/CD Demo 🚀</h2>
+    <div>
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Automate Your Development with CI/CD</h1>
+    <p>
+      This project demonstrates a complete GitHub Actions pipeline including build,
+      test, code quality, and artifact generation.
+    </p>
+    <button onclick="goToAbout()">Learn More</button>
+  </section>
+
+  <section class="features">
+    <div class="card">
+      <h3>⚙️ Build</h3>
+      <p>Compile TypeScript into production-ready code.</p>
+    </div>
+
+```
+<div class="card">
+  <h3>🧪 Test</h3>
+  <p>Run automated tests with coverage reports.</p>
+</div>
+
+<div class="card">
+  <h3>🧹 Code Quality</h3>
+  <p>Ensure clean and maintainable code using ESLint.</p>
+</div>
+
+<div class="card">
+  <h3>📦 Artifacts</h3>
+  <p>Upload build outputs and coverage reports.</p>
+</div>
+```
+
+  </section>
+
+  <footer>
+    <p>Built with ❤️ using Node.js & GitHub Actions</p>
+  </footer>
+
+  <script>
+    function goToAbout() {
+      window.location.href = "/about";
+    }
+  </script>
+
+</body>
+</html>
