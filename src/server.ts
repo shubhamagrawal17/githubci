@@ -13,6 +13,10 @@ app.get('/about', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/about.html'));
 });
 
-app.listen(3000, () => {
-  console.log('Server running at http://localhost:3000');
-});
+export default app;
+
+if (require.main === module) {
+  app.listen(3000, () => {
+    console.log('Server running at http://localhost:3000');
+  });
+}
