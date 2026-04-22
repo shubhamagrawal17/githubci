@@ -3,8 +3,8 @@ import path from 'path';
 
 const app = express();
 
-// Resolve correct path in production (dist folder)
-const publicPath = path.join(__dirname, 'public');
+// ✅ Works in both dev + test + production
+const publicPath = path.join(process.cwd(), 'public');
 
 app.use(express.static(publicPath));
 
@@ -18,7 +18,6 @@ app.get('/about', (req, res) => {
 
 export default app;
 
-// ✅ Start server only when run directly
 if (require.main === module) {
   const port = process.env.PORT || 3000;
 
