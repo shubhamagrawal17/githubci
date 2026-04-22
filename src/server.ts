@@ -3,20 +3,26 @@ import path from 'path';
 
 const app = express();
 
-app.use(express.static(path.join(__dirname, '../public')));
+// Resolve correct path in production (dist folder)
+const publicPath = path.join(__dirname, '../public');
+
+app.use(express.static(publicPath));
 
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'));
+  res.sendFile(path.join(publicPath, 'index.html'));
 });
 
 app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/about.html'));
+  res.sendFile(path.join(publicPath, 'about.html'));
 });
 
 export default app;
 
+// ✅ Start server only when run directly
 if (require.main === module) {
-  app.listen(3000, () => {
-    console.log('Server running at http://localhost:3000');
+  const port = process.env.PORT || 3000;
+
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`);
   });
 }
