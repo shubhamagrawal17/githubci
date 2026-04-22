@@ -4,7 +4,7 @@ import path from 'path';
 const app = express();
 
 // Resolve correct path in production (dist folder)
-const publicPath = path.join(__dirname, '../public');
+const publicPath = path.join(__dirname, 'public');
 
 app.use(express.static(publicPath));
 
